@@ -25,6 +25,30 @@ Ingress is a Kubernetes API object that manages external access to services with
 ## 🚀 Quick Start (with Minikube)
 
 1. **Start Minikube:**
+Enable Ingress Addon:
 
+bash
+Copy
+Edit
+minikube addons enable ingress
+Apply Deployments and Services:
+
+bash
+Copy
+Edit
+kubectl apply -f k8s/web-deployment.yaml
+kubectl apply -f k8s/api-deployment.yaml
+Apply Ingress:
+
+bash
+Copy
+Edit
+kubectl apply -f k8s/ingress.yaml
+Update /etc/hosts (for local testing):
+
+bash
+Copy
+Edit
+echo "$(minikube ip) shop.local" | sudo tee -a /etc/hosts
    ```bash
    minikube start
